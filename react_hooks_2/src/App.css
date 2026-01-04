@@ -1,0 +1,65 @@
+/* Page center */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a; /* dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Form card */
+.form-container {
+  background: #ffffff;
+  padding: 25px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Heading */
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* Input */
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+/* Button */
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+  background: #1d4ed8;
+}
+
+/* Disabled button */
+.form-container button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Message text */
+.form-container p {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #16a34a;
+}
