@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 export default function NavBar() {
   return (
@@ -9,12 +9,12 @@ export default function NavBar() {
         </div>
 
         <div style={styles.navLinks}>
-          <Link style={styles.link} to="/">Home</Link>
-          <Link style={styles.link} to="/user/login">Login</Link>
-          <Link style={styles.link} to="/user/about">About</Link>
-          <Link style={styles.link} to="/college">College</Link>
-          <Link style={styles.link} to="/users">Users</Link>
-           <Link style={styles.link} to="/users/list">List</Link>
+          <NavLink style={navStyle} to="/">Home</NavLink>
+          <NavLink style={navStyle} to="/user/login">Login</NavLink>
+          <NavLink style={navStyle} to="/user/about">About</NavLink>
+          <NavLink style={navStyle} to="/college">College</NavLink>
+          <NavLink style={navStyle} to="/users">Users</NavLink>
+          <NavLink style={navStyle} to="/users/list">List</NavLink>
         </div>
       </div>
 
@@ -22,6 +22,17 @@ export default function NavBar() {
     </>
   );
 }
+
+//Active style function
+const navStyle = ({ isActive }) => ({
+  textDecoration: "none",
+  color: isActive ? "#00ffcc" : "white",
+  fontSize: "18px",
+  padding: "6px 12px",
+  borderRadius: "6px",
+  transition: "0.3s ease",
+  backgroundColor: isActive ? "rgba(255,255,255,0.15)" : "transparent"
+});
 
 const styles = {
   header: {
@@ -39,13 +50,5 @@ const styles = {
   navLinks: {
     display: "flex",
     gap: "25px"
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "18px",
-    padding: "6px 12px",
-    borderRadius: "6px",
-    transition: "0.3s ease"
   }
 };
