@@ -6,6 +6,7 @@ import Transition from './UseTransition';
 import Derived from './DerivedState';
 import Update from './ObjectUpdate';
 import UpdateArray from './UpdateArray';
+import Action from './UseActionState';
 
 
 //useRef HOOK in React
@@ -173,7 +174,8 @@ function App() {
   return (
     <div>
       {/* < Update /> */}/
-      < UpdateArray />
+      {/* < UpdateArray /> */}
+      <Action />
     </div>
   );
 }
