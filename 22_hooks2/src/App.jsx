@@ -4,6 +4,7 @@ import Child from './Child';
 import Hook from '../../4_props_passing_2/src/Useform';
 import Transition from './UseTransition';
 import Derived from './DerivedState';
+import Update from './ObjectUpdate';
 
 
 //useRef HOOK in React
@@ -133,7 +134,7 @@ import Derived from './DerivedState';
 
 // export default App;
 
-
+// Used for UseformStatus, UseTransition and derivedSates
 // function App() {
 
 
@@ -149,14 +150,28 @@ import Derived from './DerivedState';
 // export default App;
 
 
+//lifting Up State
+// function App() {
+//   const [count, setCount] = useState(0);
 
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <Child setCount={setCount} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// 
 function App() {
-  const [count, setCount] = useState(0);
+ 
 
   return (
     <div>
-      <h2>Count: {count}</h2>
-      <Child setCount={setCount} />
+      < Update />
     </div>
   );
 }
