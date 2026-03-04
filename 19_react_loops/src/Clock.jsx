@@ -20,7 +20,7 @@ function Clock({ color }) {
             <div
                 style={{
                     backgroundColor: "black",
-                    color: color,          // ✅ use prop here
+                    color: color,          
                     padding: "30px 50px",
                     borderRadius: "20px",
                     fontSize: "48px",
