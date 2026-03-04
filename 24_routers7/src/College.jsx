@@ -10,7 +10,7 @@ function College() {
                 <div>
                     <ul style={styles.list}>
                         <li>
-                            <Link style={styles.link} to="student">Student</Link>
+                            <Link style={styles.link} to="">Student</Link>
                         </li>
                     </ul>
 

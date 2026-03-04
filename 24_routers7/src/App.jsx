@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from "react-router"
+import { Route, Routes } from "react-router"
 import Home from "./Home"
 import About from "./About"
 import Login from "./Login"
@@ -12,25 +12,26 @@ import Details from "./Details"
 function App() {
 
   return (
-    <div>
-      <NavBar />
-      <Routes>
+    <Routes>
 
+      {/* Routes WITH Navbar */}
+      <Route element={<NavBar />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+      </Route>
 
-        <Route path="/college" element={<College />} >
-          <Route path="student" element={<Student />} />
-          <Route path="departments" element={<Department />} />
-          <Route path="details" element={<Details />} />
-        </Route>
+      {/* Routes WITHOUT Navbar */}
+      <Route path="/college" element={<College />}>
+        <Route index element={<Student />} />
+        <Route path="departments" element={<Department />} />
+        <Route path="details" element={<Details />} />
+      </Route>
 
-        <Route path="/*" element={<PageNotFound />} />
-      </Routes>
-    </div>
+      <Route path="/*" element={<PageNotFound />} />
+
+    </Routes>
   )
-
 }
 
 export default App
