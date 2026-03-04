@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 function UserDetail() {
 
@@ -10,6 +10,7 @@ function UserDetail() {
         <h1 style={styles.title}>User Detail Page</h1>
 
         <h2 style={styles.text}>ID: {ParamData.id}</h2>
+        <h3 style={styles.text}><Link to="/users">Back</Link></h3>
       </div>
     </div>
   )

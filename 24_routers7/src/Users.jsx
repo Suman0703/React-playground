@@ -40,7 +40,7 @@ const styles = {
     background: "white",
     padding: "40px",
     borderRadius: "12px",
-    width: "350px",
+    width: "400px",
     textAlign: "center",
     boxShadow: "0 10px 25px rgba(0,0,0,0.3)"
   },
@@ -49,13 +49,13 @@ const styles = {
     color: "#1e3c72"
   },
   userItem: {
-    margin: "12px 0"
+    margin: "12px"
   },
   link: {
     textDecoration: "none",
     color: "white",
     backgroundColor: "#1e3c72",
-    padding: "10px 20px",
+    padding: "10px",
     borderRadius: "8px",
     display: "inline-block",
     width: "100%",

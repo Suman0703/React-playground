@@ -14,6 +14,7 @@ export default function NavBar() {
           <Link style={styles.link} to="/user/about">About</Link>
           <Link style={styles.link} to="/college">College</Link>
           <Link style={styles.link} to="/users">Users</Link>
+           <Link style={styles.link} to="/users/list">List</Link>
         </div>
       </div>
 
