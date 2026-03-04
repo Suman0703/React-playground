@@ -17,8 +17,12 @@ function App() {
       {/* Routes WITH Navbar */}
       <Route element={<NavBar />}>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+
+        <Route path="user">
+          <Route path="/user/about" element={<About />} />
+          <Route path="/user/login" element={<Login />} />
+        </Route>
+
       </Route>
 
       {/* Routes WITHOUT Navbar */}

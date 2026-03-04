@@ -10,8 +10,8 @@ export default function NavBar() {
 
         <div style={styles.navLinks}>
           <Link style={styles.link} to="/">Home</Link>
-          <Link style={styles.link} to="/login">Login</Link>
-          <Link style={styles.link} to="/about">About</Link>
+          <Link style={styles.link} to="/user/login">Login</Link>
+          <Link style={styles.link} to="/user/about">About</Link>
           <Link style={styles.link} to="/college">College</Link>
         </div>
       </div>
