@@ -6,6 +6,7 @@ function ProfileCard(props) {
 
   return (
     <div className="profile-card">
+      <h2>ID: {props.id}</h2>
       <h2>Name: {props.name}</h2>
       <p>Role: {props.role}</p>
       <p>Hobbies: {props.hobby}</p>

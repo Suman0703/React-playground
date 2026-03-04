@@ -32,7 +32,7 @@ function App() {
 
   {users.map((user) => (
     <ProfileCard
-      key={user.id}
+      id={user.id}
       name={user.name}
       role={user.role}
       hobby={user.hobby}
