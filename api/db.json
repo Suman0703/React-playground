@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "name": "Suman",
+            "role": "React Beginner",
+            "hobby": "Anime & Coding"
+        },
+        {
+            "name": "Simran",
+            "role": "Web Learner",
+            "hobby": "Designing"
+        },
+        {
+            "name": "Aman",
+            "role": "Frontend Student",
+            "hobby": "Gaming"
+        },
+        {
+            "name": "Priya",
+            "role": "Frontend Student",
+            "hobby": "Gaming"
+        },
+        {
+            "name": "Rohit",
+            "role": "React Beginner",
+            "hobby": "Anime & Coding"
+        }
+    ]
+}
