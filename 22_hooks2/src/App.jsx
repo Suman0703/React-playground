@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import './App.css'
 import Child from './Child';
+import Hook from '../../4_props_passing_2/src/Useform';
 
 
 //useRef HOOK in React
@@ -114,16 +115,29 @@ import Child from './Child';
 
 
 // Passing Function as A prop
+// function App() {
+
+//   function handleClick() {
+//     alert("Button clicked in Child component!");
+//   }
+
+//   return (
+//     <div>
+//       <h1>Parent Component</h1>
+//       <Child onButtonClick={handleClick} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
 function App() {
 
-  function handleClick() {
-    alert("Button clicked in Child component!");
-  }
 
   return (
     <div>
-      <h1>Parent Component</h1>
-      <Child onButtonClick={handleClick} />
+      <Hook />
     </div>
   );
 }
