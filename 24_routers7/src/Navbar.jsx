@@ -11,7 +11,7 @@ export default function NavBar() {
             <div>
                 <ul>
                     <li>
-                        <Link className="link" to="/home">Home</Link>
+                        <Link className="link" to="/">Home</Link>
                     </li>
                 </ul>
                 <ul>
@@ -22,6 +22,11 @@ export default function NavBar() {
                 <ul>
                     <li>
                         <Link className="link" to="/about">About</Link>
+                    </li>
+                </ul>
+                 <ul>
+                    <li>
+                        <Link className="link" to="/college">College</Link>
                     </li>
                 </ul>
             </div>

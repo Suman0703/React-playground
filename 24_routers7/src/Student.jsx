@@ -1,9 +1,10 @@
-export default function Login() {
+function Student() {
+
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Login section</h1>
+      <h1 style={styles.title}>Student Section</h1>
     </div>
-  );
+  )
 }
 
 const styles = {
@@ -24,3 +25,5 @@ const styles = {
     letterSpacing: "2px"
   }
 };
+
+export default Student
