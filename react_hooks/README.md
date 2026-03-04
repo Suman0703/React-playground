@@ -1,16 +1,26 @@
-# React + Vite
+# React Hooks Practice – useEffect + useCallback 🔁
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This task demonstrates how `useEffect` and `useCallback` work individually and together to control **when code runs** and **when functions are recreated** in a React component. These hooks are essential for writing predictable, optimized, and clean React applications.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Goal of This Task
 
-## React Compiler
+The goal of this task is to deeply understand:
+- Why `useEffect` exists
+- Why `useCallback` exists
+- How React re-renders components
+- How dependency arrays work
+- How to avoid unnecessary re-renders and side effects
+- How both hooks can be combined correctly
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This task focuses on **concept clarity**, not shortcuts.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Hooks Used
+
+### 1️⃣ `useState`
+
+```js
+const [count, setCount] = useState(0)
