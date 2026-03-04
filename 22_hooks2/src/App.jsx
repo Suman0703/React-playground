@@ -1,8 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import Child from './Child';
 import Hook from '../../4_props_passing_2/src/Useform';
 import Transition from './UseTransition';
+import Derived from './DerivedState';
 
 
 //useRef HOOK in React
@@ -133,13 +134,29 @@ import Transition from './UseTransition';
 // export default App;
 
 
-function App() {
+// function App() {
 
+
+//   return (
+//     <div>
+//       {/* <Hook /> */}
+//       {/* < Transition/> */}
+//       {/* < Derived /> */}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+function App() {
+  const [count, setCount] = useState(0);
 
   return (
     <div>
-      {/* <Hook /> */}
-      < Transition/>
+      <h2>Count: {count}</h2>
+      <Child setCount={setCount} />
     </div>
   );
 }

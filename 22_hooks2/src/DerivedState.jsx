@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function App() {
+function Derived() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default Derived;
