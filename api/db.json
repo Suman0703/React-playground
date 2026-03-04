@@ -24,6 +24,11 @@
             "name": "Rohit",
             "role": "React Beginner",
             "hobby": "Anime & Coding"
+        },
+         {
+            "name": "Raman",
+            "role": "React Beginner",
+            "hobby": "Anime & Coding"
         }
     ]
 }
