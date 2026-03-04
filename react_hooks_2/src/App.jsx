@@ -63,26 +63,52 @@
 // export default App
 
 
-import { useState, useCallback } from "react"
+// 
 
-function Button({ onClick }) {
-  console.log("Button rendered ✅")
-  return <button onClick={onClick}>Click me</button>
-}
+// import UserContext from "./UserContext"
+// import Home from "./Home"
+
+// function App() {
+//   const user = "Suman"
+
+//   return (
+//     <UserContext.Provider value={user}>
+//       <Home />
+//     </UserContext.Provider>
+//   )
+// }
+
+// export default App
+
+import { useState } from "react"
 
 function App() {
   const [count, setCount] = useState(0)
+  const [dark, setDark] = useState(false)
 
-  const handleClick = useCallback(() => {
-    alert("Button clicked")
-  }, [])
+  // heavy calculation
+  const slowCalculation = () => {
+    console.log("Calculating...")
+    let total = 0
+    for (let i = 0; i < 1_000_000_000; i++) {
+      total += i
+    }
+    return total
+  }
+
+  const result = slowCalculation()
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Count: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+    <div style={{ background: dark ? "#000" : "#fff", color: dark ? "#fff" : "#000" }}>
+      <h1>Result: {result}</h1>
 
-      <Button onClick={handleClick} />
+      <button onClick={() => setCount(count + 1)}>
+        Increase Count
+      </button>
+
+      <button onClick={() => setDark(!dark)}>
+        Toggle Theme
+      </button>
     </div>
   )
 }
