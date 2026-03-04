@@ -1,16 +1,40 @@
-# React + Vite
+# React Day 1 – First Component & JSX Basics 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project marks the beginning of my React learning journey.  
+In this task, I focused on understanding **how React works at the component level**, rather than just theory.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 What I Built
 
-## React Compiler
+- A basic React application using **Vite**
+- A reusable React component named `Welcome`
+- Rendered the component inside the main `App` component
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Concepts Learned (In-Depth)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1️⃣ What is React?
+React is a **JavaScript library** used to build **component-based user interfaces**.  
+Instead of writing one large HTML file, React allows us to split the UI into **small reusable components**.
+
+---
+
+### 2️⃣ What is a React Component?
+A component is a **JavaScript function** that:
+- Returns JSX
+- Represents a part of the UI
+- Can be reused multiple times
+
+Example:
+```jsx
+function App() {
+  return(
+    <div>
+      <h1>Hello React 🚀</h1>
+      <p>My React journey starts today</p>
+       <Welcome />
+    </div>
+  );
+}
