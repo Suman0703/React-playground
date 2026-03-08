@@ -35,12 +35,6 @@
       "name": "Raman",
       "role": "React Beginner",
       "hobby": "Anime & Coding"
-    },
-    {
-      "id": "ae10",
-      "name": "suman",
-      "role": "student",
-      "hobby": "drawing"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

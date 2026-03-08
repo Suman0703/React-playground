@@ -20,6 +20,18 @@ function UserList() {
         setLoading(false);
     }
 
+    //Delete Function
+    async function deleteUser(id) {
+        const URL = `http://localhost:3000/users/${id}`;
+
+        await fetch(URL, {
+            method: "DELETE"
+        });
+
+        //Update UI without refreshing it
+        setUsersData(usersData.filter((user) => user.id !== id));
+    }
+
     return (
         <div style={styles.container}>
             <h1 style={styles.heading}>Users List</h1>
@@ -31,6 +43,13 @@ function UserList() {
                             <p><strong>Name:</strong> {user.name}</p>
                             <p><strong>Role:</strong> {user.role}</p>
                             <p><strong>Hobby:</strong> {user.hobby}</p>
+
+                            <button
+                                style={styles.deleteBtn}
+                                onClick={() => deleteUser(user.id)}
+                            >
+                                Delete
+                            </button>
                         </div>
                     ))
                     :
@@ -61,6 +80,16 @@ const styles = {
         borderRadius: "10px",
         boxShadow: "0px 2px 8px rgba(0,0,0,0.15)",
         textAlign: "left"
+    },
+
+    deleteBtn: {
+        marginTop: "10px",
+        padding: "8px 14px",
+        backgroundColor: "red",
+        color: "white",
+        border: "none",
+        borderRadius: "5px",
+        cursor: "pointer"
     },
 
     loading: {
