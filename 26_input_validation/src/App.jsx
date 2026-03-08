@@ -108,49 +108,94 @@
 // export default App;
 
 
-import React, { Suspense, lazy, useState } from "react";
+// import React, { Suspense, lazy, useState } from "react";
 
-// Lazy load components
-const UserList = lazy(() => import("./UserList"));
+// // Lazy load components
+// const UserList = lazy(() => import("./UserList"));
+
+// function App() {
+
+//   const [showList, setShowList] = useState(false);
+
+//   return (
+//     <div style={styles.container}>
+//       <h1>React Lazy Loading Example</h1>
+
+//       <button style={styles.button} onClick={() => setShowList(true)}>
+//         Show Users
+//       </button>
+
+//       {showList && (
+//         <Suspense fallback={<h2>Loading...</h2>}>
+//           <UserList />
+//         </Suspense>
+//       )}
+
+//     </div>
+//   );
+// }
+
+// const styles = {
+//   container: {
+//     textAlign: "center",
+//     marginTop: "50px",
+//     fontFamily: "Arial"
+//   },
+
+//   button: {
+//     padding: "10px 20px",
+//     backgroundColor: "#007bff",
+//     color: "white",
+//     border: "none",
+//     borderRadius: "5px",
+//     cursor: "pointer",
+//     marginTop: "20px"
+//   }
+// };
+
+// export default App;
+
+
+
+import { useState, useOptimistic } from "react";
 
 function App() {
 
-  const [showList, setShowList] = useState(false);
+  const [likes, setLikes] = useState(0);
+
+  const [optimisticLikes, addOptimisticLike] =
+    useOptimistic(likes, (currentLikes) => currentLikes + 1);
+
+  async function handleLike() {
+
+    // Update UI immediately
+    addOptimisticLike();
+
+    // Simulate server delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Real update from server
+    setLikes((prev) => prev + 1);
+  }
 
   return (
-    <div style={styles.container}>
-      <h1>React Lazy Loading Example</h1>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Likes: {optimisticLikes}</h2>
 
-      <button style={styles.button} onClick={() => setShowList(true)}>
-        Show Users
+      <button
+        onClick={handleLike}
+        style={{
+          padding: "10px 20px",
+          background: "blue",
+          color: "white",
+          border: "none",
+          borderRadius: "5px"
+        }}
+      >
+        Like 👍
       </button>
-
-      {showList && (
-        <Suspense fallback={<h2>Loading...</h2>}>
-          <UserList />
-        </Suspense>
-      )}
-
     </div>
   );
 }
-
-const styles = {
-  container: {
-    textAlign: "center",
-    marginTop: "50px",
-    fontFamily: "Arial"
-  },
-
-  button: {
-    padding: "10px 20px",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "20px"
-  }
-};
 
 export default App;
