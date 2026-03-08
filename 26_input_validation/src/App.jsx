@@ -157,45 +157,107 @@
 
 
 
-import { useState, useOptimistic } from "react";
+// import { useState, useOptimistic } from "react";
+
+// function App() {
+
+//   const [likes, setLikes] = useState(0);
+
+//   const [optimisticLikes, addOptimisticLike] =
+//     useOptimistic(likes, (currentLikes) => currentLikes + 1);
+
+//   async function handleLike() {
+
+//     // Update UI immediately
+//     addOptimisticLike();
+
+//     // Simulate server delay
+//     await new Promise((resolve) => setTimeout(resolve, 2000));
+
+//     // Real update from server
+//     setLikes((prev) => prev + 1);
+//   }
+
+//   return (
+//     <div style={{ textAlign: "center", marginTop: "50px" }}>
+//       <h2>Likes: {optimisticLikes}</h2>
+
+//       <button
+//         onClick={handleLike}
+//         style={{
+//           padding: "10px 20px",
+//           background: "blue",
+//           color: "white",
+//           border: "none",
+//           borderRadius: "5px"
+//         }}
+//       >
+//         Like 👍
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import { Activity } from "react";
 
 function App() {
 
-  const [likes, setLikes] = useState(0);
-
-  const [optimisticLikes, addOptimisticLike] =
-    useOptimistic(likes, (currentLikes) => currentLikes + 1);
-
-  async function handleLike() {
-
-    // Update UI immediately
-    addOptimisticLike();
-
-    // Simulate server delay
+  async function handleSubmit(formData) {
+    // simulate server request
     await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    // Real update from server
-    setLikes((prev) => prev + 1);
+    alert("Form Submitted!");
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Likes: {optimisticLikes}</h2>
+    <div style={styles.container}>
+      <h2>User Form</h2>
 
-      <button
-        onClick={handleLike}
-        style={{
-          padding: "10px 20px",
-          background: "blue",
-          color: "white",
-          border: "none",
-          borderRadius: "5px"
-        }}
-      >
-        Like 👍
-      </button>
+      <Activity fallback={<p>Submitting...</p>}>
+        <form action={handleSubmit} style={styles.form}>
+
+          <input name="name" placeholder="Enter Name" style={styles.input} />
+          <input name="email" placeholder="Enter Email" style={styles.input} />
+
+          <button style={styles.button}>Submit</button>
+
+        </form>
+      </Activity>
+
     </div>
   );
 }
+
+const styles = {
+  container: {
+    textAlign: "center",
+    marginTop: "60px",
+    fontFamily: "Arial"
+  },
+
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    width: "250px",
+    margin: "auto",
+    gap: "10px"
+  },
+
+  input: {
+    padding: "8px",
+    border: "1px solid #ccc",
+    borderRadius: "5px"
+  },
+
+  button: {
+    padding: "10px",
+    background: "blue",
+    color: "white",
+    border: "none",
+    borderRadius: "5px"
+  }
+};
 
 export default App;
