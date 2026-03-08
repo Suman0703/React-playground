@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import UserList from "./UserList";
+import "./App.css"
+import { NavLink, Route, Routes } from "react-router";
+import UserAdd from "./UserAdd";
 
 // function App() {
 
@@ -39,49 +42,129 @@ import "./App.css";
 // export default App;
 
 
-//Using my OWN api 
+//Integrate JSON Server API and Loader
+// function App() {
+
+//   const [usersData, setUsersData] = useState([]);
+//   const [loading, setLoading] = useState(false);
+
+//   useEffect(() => {
+//     setLoading(true)
+//     getUserData();
+//   }, []);
+
+//   async function getUserData() {
+//     const URL = "http://localhost:3000/users";
+
+//     let response = await fetch(URL);
+//     let data = await response.json();
+
+//     setUsersData(data);
+//     setLoading(false);
+//   }
+
+//   console.log(usersData);
+
+//   return (
+//     <div className="container">
+//       <h1>Integrate JSON Server API and Loader</h1>
+
+//       {
+//       !loading?
+//       usersData && usersData.map((user) => (
+//         <ul key={user.id} className="user-card">
+//           <li><strong>Name:</strong> {user.name}</li>
+//           <li><strong>Role:</strong> {user.role}</li>
+//           <li><strong>Hobby:</strong> {user.hobby}</li>
+//         </ul>
+//       ))
+//       :<h1>
+//         Data Loading
+//       </h1>
+//     }
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Make Routes For API Pages
 function App() {
-
-  const [usersData, setUsersData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true)
-    getUserData();
-  }, []);
-
-  async function getUserData() {
-    const URL = "http://localhost:3000/users";
-
-    let response = await fetch(URL);
-    let data = await response.json();
-
-    setUsersData(data);
-    setLoading(false);
-  }
-
-  console.log(usersData);
-
   return (
-    <div className="container">
-      <h1>Integrate JSON Server API and Loader</h1>
+    <div style={styles.app}>
+      <nav style={styles.navbar}>
+        <ul style={styles.navList}>
+          <li style={styles.navItem}>
+            <NavLink 
+              to="/" 
+              style={({ isActive }) =>
+                isActive ? { ...styles.link, ...styles.activeLink } : styles.link
+              }
+            >
+              List
+            </NavLink>
+          </li>
 
-      {
-      !loading?
-      usersData && usersData.map((user) => (
-        <ul key={user.id} className="user-card">
-          <li><strong>Name:</strong> {user.name}</li>
-          <li><strong>Role:</strong> {user.role}</li>
-          <li><strong>Hobby:</strong> {user.hobby}</li>
+          <li style={styles.navItem}>
+            <NavLink 
+              to="/add"
+              style={({ isActive }) =>
+                isActive ? { ...styles.link, ...styles.activeLink } : styles.link
+              }
+            >
+              Add User
+            </NavLink>
+          </li>
         </ul>
-      ))
-      :<h1>
-        Data Loading
-      </h1>
-    }
+      </nav>
 
+      <div style={styles.content}>
+        <Routes>
+          <Route path="/" element={<UserList />} />
+          <Route path="/add" element={<UserAdd />} />
+        </Routes>
+      </div>
     </div>
   );
 }
+
+const styles = {
+  app: {
+    fontFamily: "Arial, sans-serif"
+  },
+
+  navbar: {
+    backgroundColor: "#222",
+    padding: "15px"
+  },
+
+  navList: {
+    listStyle: "none",
+    display: "flex",
+    justifyContent: "center",
+    gap: "30px",
+    margin: 0,
+    padding: 0
+  },
+
+  navItem: {},
+
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "18px",
+    padding: "6px 12px",
+    borderRadius: "5px"
+  },
+
+  activeLink: {
+    backgroundColor: "#007bff"
+  },
+
+  content: {
+    padding: "20px"
+  }
+};
 
 export default App;

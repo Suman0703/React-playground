@@ -1,40 +1,47 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Suman",
       "role": "React Beginner",
       "hobby": "Anime & Coding"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Simran",
       "role": "Web Learner",
       "hobby": "Designing"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Aman",
       "role": "Frontend Student",
       "hobby": "Gaming"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Priya",
       "role": "Frontend Student",
       "hobby": "Gaming"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Rohit",
       "role": "React Beginner",
       "hobby": "Anime & Coding"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Raman",
       "role": "React Beginner",
       "hobby": "Anime & Coding"
+    },
+    {
+      "id": "ae10",
+      "name": "suman",
+      "role": "student",
+      "hobby": "drawing"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
