@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Product from "./Product";
-import Cart from "./Cart";   // ✅ ADD THIS
+import Cart from "./Cart"; 
 
 function App() {
   return (
